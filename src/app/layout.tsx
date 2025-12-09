@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -19,6 +20,20 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  keywords: [
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "TypeScript",
+    "MERN Stack",
+    "Shopify",
+    "Laravel",
+    "Portfolio",
+    "Nishant Patel",
+    "Web Development",
+    "Software Engineer",
+  ],
   openGraph: {
     title: `${DATA.name}`,
     description: DATA.description,
@@ -26,6 +41,14 @@ export const metadata: Metadata = {
     siteName: `${DATA.name}`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `/me.png`,
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name} - Full Stack Developer`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -41,6 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     title: `${DATA.name}`,
     card: "summary_large_image",
+    images: [`/me.png`],
   },
   icons: {
     icon: '/favicon.ico',
@@ -53,8 +77,48 @@ export const metadata: Metadata = {
     ],
   },
   verification: {
-    google: "",
-    yandex: "",
+    google: "", // Add your Google Search Console verification code here
+    yandex: "", // Add your Yandex verification code here
+  },
+  alternates: {
+    canonical: DATA.url,
+  },
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: DATA.name,
+      jobTitle: "Full Stack Developer",
+      description: DATA.description,
+      url: DATA.url,
+      image: `${DATA.url}/me.png`,
+      sameAs: [
+        DATA.contact.social.GitHub.url,
+        DATA.contact.social.LinkedIn.url,
+      ],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: DATA.location,
+      },
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Full Stack Developer",
+        occupationalCategory: "Software Development",
+        skills: DATA.skills.join(", "),
+      },
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: DATA.education[0].school,
+      },
+      worksFor: DATA.work.map(company => ({
+        "@type": "Organization",
+        name: company.company,
+        jobTitle: company.title,
+        startDate: company.start,
+        endDate: company.end === "Freelancing" ? undefined : company.end,
+      })),
+      knowsAbout: DATA.skills,
+    }),
   },
 };
 
@@ -73,14 +137,12 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            
-            
-              {/* Your Content/Components */}
-              <div className="">
-            {children}
+            {/* Your Content/Components */}
+            <div className="">
+              {children}
             </div>
-           
-              
+            <Toaster />
+            <Navbar />
           </TooltipProvider>
         </ThemeProvider>
       </body>

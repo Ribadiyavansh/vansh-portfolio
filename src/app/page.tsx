@@ -6,6 +6,7 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import { Hero } from "@/components/hero";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Dock } from "@/components/magicui/dock";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -193,6 +194,8 @@ export default function Page() {
             <div>
               <ModeToggle />
             </div>
+            
+
           </BlurFade>
         </div>
       </section>
