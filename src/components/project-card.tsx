@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -7,8 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -40,6 +44,8 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <Card
       className={
@@ -48,17 +54,28 @@ export function ProjectCard({
     >
       <Link
         href={href || "#"}
-        className={cn("block cursor-pointer", className)}
+        className={cn("block cursor-pointer relative", className)}
       >
         {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
-          />
+          <>
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-muted/50 rounded-2xl! z-10">
+                <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+              </div>
+            )}
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              onCanPlay={() => setIsLoading(false)}
+              className={cn(
+                "pointer-events-none mx-auto h-40 w-full object-cover object-top transition-opacity duration-300",
+                isLoading ? "opacity-0" : "opacity-100"
+              )}
+            />
+          </>
         )}
         {image && (
           <Image
