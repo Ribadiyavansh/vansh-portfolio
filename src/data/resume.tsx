@@ -89,7 +89,8 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Shopify & Web Developer",
-      logoUrl: "https://yt3.googleusercontent.com/4iqg_1ecnVxbB28F3GMqFJcJ-DxoYl2IfCvvfcch6h5bGMUP1TYlEvaKrzx1IYBRmIBC2f89=s160-c-k-c0x00ffffff-no-rj",
+      logoUrl:
+        "https://yt3.googleusercontent.com/4iqg_1ecnVxbB28F3GMqFJcJ-DxoYl2IfCvvfcch6h5bGMUP1TYlEvaKrzx1IYBRmIBC2f89=s160-c-k-c0x00ffffff-no-rj",
       start: "2024",
       end: "Freelancing",
       description:
@@ -101,7 +102,8 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "React.js Developer",
-      logoUrl: "https://rutanshtech.com/static/media/logo.cc4d56e0c3c62cd0f972.png",
+      logoUrl:
+        "https://rutanshtech.com/static/media/logo.cc4d56e0c3c62cd0f972.png",
       start: "2024",
       end: "Freelancing",
       description:
@@ -121,7 +123,7 @@ export const DATA = {
   projects: [
     {
       title: "AiTodoCRM",
-      href: "",
+      href: "https://aitodocrm.in",
       dates: "2025",
       active: true,
       description:
@@ -137,12 +139,71 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://aitodo-six.vercel.app",
+          href: "https://aitodocrm.in",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
       video: "/Aitodo.mov",
+    },
+    {
+      title: "Onboarding Screen React",
+      href: "https://onbording-screen-react.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "NPM package for building customizable onboarding screens in React. It provides a simple and flexible way to create walkthroughs and tutorials for your web applications.",
+      technologies: ["React", "NPM", "TypeScript", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://onbording-screen-react.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "NPM",
+          href: "https://www.npmjs.com/package/onbording-screen-react",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/onboardingscreen.mp4",
+    },
+    {
+      title: "Brand-CN",
+      href: "https://brand-cn.vercel.app/",
+      dates: "2024",
+      active: true,
+      description:
+        "Open-source project for applying Shadcn UI themes (ChatGPT, Gemini, etc.) to applications. It allows users to browse and integrate professional design systems with ease.",
+      technologies: ["React", "Next.js", "Shadcn UI", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://brand-cn.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/brand-cn.mp4",
+    },
+    {
+      title: "Project Management App",
+      href: "https://project-management-iota-teal.vercel.app",
+      dates: "2024",
+      active: true,
+      description:
+        "Comprehensive project management tool with workspaces, invitation systems, and task management. Built for teams to collaborate effectively with real-time updates.",
+      technologies: ["React", "Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://project-management-iota-teal.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/project-management.mp4",
     },
     {
       title: "Prddiam",
@@ -197,13 +258,8 @@ export const DATA = {
       href: "https://kasbanatural.com",
       dates: "2025",
       active: true,
-      description:
-        "Kasba Natural is a ecommerce app based on lravel ",
-      technologies: [
-        "Laravel",
-        "Mysql",
-        "Tailwind CSS",
-      ],
+      description: "Kasba Natural is a ecommerce app based on lravel ",
+      technologies: ["Laravel", "Mysql", "Tailwind CSS"],
       links: [
         {
           type: "Website",
@@ -259,7 +315,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024331613_nwallpaper.png?alt=media&token=8c879230-e984-41c4-8070-5492b1b574d2",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024331613_nwallpaper.png?alt=media&token=8c879230-e984-41c4-8070-5492b1b574d2",
       video: "",
     },
     {
@@ -283,7 +340,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024526681_earn4day.png?alt=media&token=acdece32-f80a-47d4-a0a5-a2bed4eb2d70",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024526681_earn4day.png?alt=media&token=acdece32-f80a-47d4-a0a5-a2bed4eb2d70",
       video: "",
     },
     {
@@ -307,11 +365,10 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024291349_Untitled%20design%20(2).png?alt=media&token=ecd73637-1201-484d-98bf-bb601fa1b2ee",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/ganesha-9f5a9.appspot.com/o/uploads%2F1765024291349_Untitled%20design%20(2).png?alt=media&token=ecd73637-1201-484d-98bf-bb601fa1b2ee",
       video: "",
     },
-    
-    
   ],
   hackathons: [],
 } as const;
