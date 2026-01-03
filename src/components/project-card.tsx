@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 interface Props {
@@ -46,6 +46,14 @@ export function ProjectCard({
 }: Props) {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Fallback: If video takes longer than 10 seconds, hide loader and show poster
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Card
       className={
@@ -57,10 +65,10 @@ export function ProjectCard({
         className={cn("block cursor-pointer relative", className)}
       >
         {video && (
-          <>
+          <div className="relative h-40 w-full overflow-hidden">
             {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-muted/50 rounded-2xl! z-10">
-                <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm z-20">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
               </div>
             )}
             <video
@@ -71,13 +79,16 @@ export function ProjectCard({
               playsInline
               preload="metadata"
               poster={image}
+              onLoadedData={() => setIsLoading(false)}
               onCanPlay={() => setIsLoading(false)}
+              onPlaying={() => setIsLoading(false)}
+              onError={() => setIsLoading(false)}
               className={cn(
-                "pointer-events-none mx-auto h-40 w-full object-cover object-top transition-opacity duration-300",
+                "pointer-events-none mx-auto h-40 w-full object-cover object-top transition-opacity duration-500",
                 isLoading ? "opacity-0" : "opacity-100"
               )}
             />
-          </>
+          </div>
         )}
         {image && (
           <Image
