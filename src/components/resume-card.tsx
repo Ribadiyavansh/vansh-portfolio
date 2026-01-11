@@ -6,7 +6,7 @@ import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
 
 interface ResumeCardProps {
@@ -40,7 +40,7 @@ export const ResumeCard = ({
 
   return (
     <Link
-      href={href || "#"}
+      to={href || "#"}
       className="block cursor-pointer"
       onClick={handleClick}
     >

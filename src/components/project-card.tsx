@@ -9,9 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
@@ -61,7 +59,7 @@ export function ProjectCard({
       }
     >
       <Link
-        href={href || "#"}
+        to={href || "#"}
         className={cn("block cursor-pointer relative", className)}
       >
         {video && (
@@ -69,7 +67,7 @@ export function ProjectCard({
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm z-20">
               <div className="grid h-full max-h-[300px] min-h-[160px] w-full max-w-xs animate-pulse place-items-center rounded-lg bg-gray-300">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"className="w-12 h-12 text-gray-500">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-12 h-12 text-gray-500">
     <path stroke-linecap="round" stroke-linejoin="round"
       d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z">
     </path>
@@ -97,11 +95,9 @@ export function ProjectCard({
           </div>
         )}
         {image && (
-          <Image
+          <img
             src={image}
             alt={title}
-            width={500}
-            height={300}
             className="h-40 w-full overflow-hidden object-cover object-top"
           />
         )}
@@ -137,12 +133,12 @@ export function ProjectCard({
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge key={idx} className="flex gap-2 px-2 py-1 text-[10px]">
+              <a href={link?.href} key={idx} target="_blank" rel="noopener noreferrer">
+                <Badge className="flex gap-2 px-2 py-1 text-[10px]">
                   {link.icon}
                   {link.type}
                 </Badge>
-              </Link>
+              </a>
             ))}
           </div>
         )}

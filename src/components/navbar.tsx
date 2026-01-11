@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -19,9 +19,9 @@ export default function Navbar() {
         {DATA.navbar.map((item) => (
           <DockIcon key={item.href}>
             <Tooltip>
-              <TooltipTrigger asChild> 
+              <TooltipTrigger asChild>
                 <Link
-                  href={item.href}
+                  to={item.href}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
                     "size-12"
@@ -38,20 +38,22 @@ export default function Navbar() {
         ))}
         <Separator orientation="vertical" className="h-full" />
         {Object.entries(DATA.contact.social)
-          .filter(([_, social]) => social.navbar)
+          .filter(([, social]) => social.navbar)
           .map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
+                  <a
                     href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12"
                     )}
                   >
                     <social.icon className="size-4" />
-                  </Link>
+                  </a>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{name}</p>

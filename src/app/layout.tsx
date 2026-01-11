@@ -4,148 +4,87 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Helmet } from "react-helmet-async";
 import "./globals.css";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-export const metadata: Metadata = {
-  metadataBase: new URL(DATA.url),
-  title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
-  },
-  description: DATA.description,
-  keywords: [
-    "Nishant Patel",
-    "Nishant-Portfolio",
-    "AiTodoCRM",
-    "Onboarding Screen React",
-    "Brand-CN",
-    "Project Management App",
-    "Prddiam",
-    "Divine Creation",
-    "Kasba Natural",
-    "NSM Roadways CRM",
-    "Nwallpaper",
-    "Earn4Day",
-    "Eco Scan",
-    "Full Stack Developer",
-    "React",
-    "Next.js",
-    "Node.js",
-    "TypeScript",
-    "MERN Stack",
-    "Shopify",
-    "Laravel",
-    "Portfolio",
-    "Web Development",
-    "Software Engineer",
-  ],
-  openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
-    url: DATA.url,
-    siteName: `${DATA.name}`,
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: `/me.png`,
-        width: 1200,
-        height: 630,
-        alt: `${DATA.name} - Full Stack Developer`,
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    title: `${DATA.name}`,
-    card: "summary_large_image",
-    images: [`/me.png`],
-  },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    other: [
-      { rel: 'icon', url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { rel: 'icon', url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { rel: 'icon', url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'icon', url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
-  alternates: {
-    canonical: DATA.url,
-  },
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: DATA.name,
-      jobTitle: "Full Stack Developer",
-      description: DATA.description,
-      url: DATA.url,
-      image: `${DATA.url}/me.png`,
-      sameAs: [
-        DATA.contact.social.GitHub.url,
-        DATA.contact.social.LinkedIn.url,
-      ],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: DATA.location,
-      },
-      hasOccupation: {
-        "@type": "Occupation",
-        name: "Full Stack Developer",
-        occupationalCategory: "Software Development",
-        skills: DATA.skills.join(", "),
-      },
-      alumniOf: {
-        "@type": "EducationalOrganization",
-        name: DATA.education[0].school,
-      },
-      worksFor: DATA.work.map(company => ({
-        "@type": "Organization",
-        name: company.company,
-        jobTitle: company.title,
-        startDate: company.start,
-        endDate: company.end === "Freelancing" ? undefined : company.end,
-      })),
-      knowsAbout: DATA.skills,
-    }),
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface LayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
+    <>
+      <Helmet>
+        <title>{`${DATA.name} | Cloud & DevOps Engineer`}</title>
+        <meta name="description" content={DATA.description} />
+        <meta name="keywords" content="Sahil Muliya, Cloud Engineer, DevOps Engineer, AWS, Linux, Docker, Portfolio, Cloud Infrastructure" />
+        <meta property="og:title" content={DATA.name} />
+        <meta property="og:description" content={DATA.description} />
+        <meta property="og:url" content={DATA.url} />
+        <meta property="og:site_name" content={DATA.name} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/my-avtar.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${DATA.name} - Cloud & DevOps Engineer`} />
+        <meta name="twitter:title" content={DATA.name} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/my-avtar.png" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+        <link rel="canonical" href={DATA.url} />
+        <link rel="icon" href="/my-avtar.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: DATA.name,
+            jobTitle: "Cloud & DevOps Engineer",
+            description: DATA.description,
+            url: DATA.url,
+            image: `${DATA.url}/my-avtar.png`,
+            sameAs: [
+              DATA.contact.social.GitHub.url,
+              DATA.contact.social.LinkedIn.url,
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: DATA.location,
+            },
+            hasOccupation: {
+              "@type": "Occupation",
+              name: "Cloud & DevOps Engineer",
+              occupationalCategory: "Cloud Computing & DevOps",
+              skills: DATA.skills.join(", "),
+            },
+            alumniOf: {
+              "@type": "EducationalOrganization",
+              name: DATA.education[0].school,
+            },
+            worksFor: DATA.work.map(company => ({
+              "@type": "Organization",
+              name: company.company,
+              jobTitle: company.title,
+              startDate: company.start,
+              endDate: company.end === "Present" ? undefined : company.end,
+            })),
+            knowsAbout: DATA.skills,
+          })}
+        </script>
+      </Helmet>
+      <div
         className={cn(
-          "antialiased bg-background!   min-h-screen font-sans  max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
+          "antialiased bg-background min-h-screen font-sans max-w-2xl mx-auto py-12 sm:py-24 px-6"
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {/* Your Content/Components */}
             <div className="">
               {children}
             </div>
@@ -153,7 +92,7 @@ export default function RootLayout({
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
-      </body>
-    </html>
+      </div>
+    </>
   );
 }
