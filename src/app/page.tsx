@@ -4,10 +4,58 @@ import { ResumeCard } from "@/components/resume-card";
 import { Badge } from "@/components/ui/badge";
 import { Hero } from "@/components/hero";
 import { DATA } from "@/data/resume";
+import { Icons } from "@/components/icons";
+import { useTheme } from "@/components/theme-provider";
 
 const BLUR_FADE_DELAY = 0.04;
 
+const getSkillIcon = (skill: string, isDarkTheme: boolean) => {
+  const skillLower = skill.toLowerCase();
+
+  // Special AWS logic: use different icons based on theme
+  if (skillLower.includes('aws') || skillLower.includes('cloud') || skillLower.includes('ec2') || skillLower.includes('s3') || skillLower.includes('iam') || skillLower.includes('cloudwatch')) {
+    // Light theme: use Monitoring & Logging icon (cloud)
+    // Dark theme: use original AWS logo
+    return isDarkTheme ? (
+      <img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+        className="w-3 h-3"
+        alt="AWS"
+      />
+    ) : (
+      <Icons.cloud className="w-3 h-3" />
+    );
+  }
+
+  if (skillLower.includes('linux') || skillLower.includes('bash') || skillLower.includes('shell')) {
+    return <Icons.linux className="w-3 h-3" />;
+  }
+  if (skillLower.includes('docker')) {
+    return <Icons.docker className="w-3 h-3" />;
+  }
+  if (skillLower.includes('git')) {
+    return <Icons.git className="w-3 h-3" />;
+  }
+  if (skillLower.includes('nginx')) {
+    return <Icons.nginx className="w-3 h-3" />;
+  }
+  if (skillLower.includes('ci/cd') || skillLower.includes('jenkins')) {
+    return <Icons.cicd className="w-3 h-3" />;
+  }
+  if (skillLower.includes('virtual machines') || skillLower.includes('networking') || skillLower.includes('monitoring') || skillLower.includes('logging') || skillLower.includes('security') || skillLower.includes('cost')) {
+    return <Icons.cloud className="w-3 h-3" />;
+  }
+  if (skillLower.includes('domain') || skillLower.includes('dns') || skillLower.includes('ssl') || skillLower.includes('https')) {
+    return <Icons.globe className="w-3 h-3" />;
+  }
+
+  // Default fallback
+  return <Icons.cloud className="w-3 h-3" />;
+};
+
 export default function Page() {
+  const { theme } = useTheme();
+  const isDarkTheme = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <Hero />
@@ -31,7 +79,10 @@ export default function Page() {
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge key={skill} className="flex items-center gap-1">
+                  {getSkillIcon(skill, isDarkTheme)}
+                  {skill}
+                </Badge>
               </BlurFade>
             ))}
           </div>

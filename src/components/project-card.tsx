@@ -12,6 +12,76 @@ import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
+import { Icons } from "@/components/icons";
+
+const getTechnologyIcon = (tech: string) => {
+  const techLower = tech.toLowerCase();
+
+  if (techLower.includes('react')) {
+    return <Icons.react className="w-2.5 h-2.5" />;
+  }
+  if (techLower.includes('node') || techLower.includes('express')) {
+    return <Icons.typescript className="w-2.5 h-2.5" />; // Using typescript icon as proxy for Node.js
+  }
+  if (techLower.includes('mongodb')) {
+    return <Icons.mongodb className="w-2.5 h-2.5" />;
+  }
+  if (techLower.includes('firebase')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+      className="w-2.5 h-2.5"
+      alt="Firebase"
+    />;
+  }
+  if (techLower.includes('javascript')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+      className="w-2.5 h-2.5"
+      alt="JavaScript"
+    />;
+  }
+  if (techLower.includes('figma')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+      className="w-2.5 h-2.5"
+      alt="Figma"
+    />;
+  }
+  if (techLower.includes('openai')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
+      className="w-2.5 h-2.5"
+      alt="OpenAI"
+    />;
+  }
+  if (techLower.includes('tailwind')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+      className="w-2.5 h-2.5"
+      alt="Tailwind CSS"
+    />;
+  }
+  if (techLower.includes('framer')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg"
+      className="w-2.5 h-2.5"
+      alt="Framer Motion"
+    />;
+  }
+  if (techLower.includes('gsap')) {
+    return <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gsap/gsap-plain.svg"
+      className="w-2.5 h-2.5"
+      alt="GSAP"
+    />;
+  }
+  if (techLower.includes('jszip')) {
+    return <Icons.git className="w-2.5 h-2.5" />; // Using git icon as proxy
+  }
+
+  // Default fallback
+  return null;
+};
 
 interface Props {
   title: string;
@@ -119,10 +189,11 @@ export function ProjectCard({
           <div className="mt-2 flex flex-wrap gap-1">
             {tags?.map((tag) => (
               <Badge
-                className="px-1 py-0 text-[10px]"
+                className="px-1 py-0 text-[10px] flex items-center gap-1"
                 variant="secondary"
                 key={tag}
               >
+                {getTechnologyIcon(tag)}
                 {tag}
               </Badge>
             ))}
