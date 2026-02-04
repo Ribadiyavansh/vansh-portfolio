@@ -232,12 +232,12 @@ export const DATA = {
             links: [
                 {
                     type: "Website",
-                    href: "#",
+                    href: "https://hirevision.sahilprajapati.me/",
                     icon: <Icons.globe className="size-3" />,
                 },
                 {
                     type: "Source",
-                    href: "https://github.com/Sahil-Prajapati-8917/Resume-Evaluation-Platform",
+                    href: "https://github.com/Sahil-Prajapati-8917/Resume-Collage.git",
                     icon: <Icons.github className="size-3" />,
                 },
             ],
