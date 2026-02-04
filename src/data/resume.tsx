@@ -262,7 +262,7 @@ export const DATA = {
             links: [
                 {
                     type: "Website",
-                    href: "https://pixora.sahilprajapati.me/",
+                    href: "https://www.pixfolio.in/",
                     icon: <Icons.globe className="size-3" />,
                 },
                 {
