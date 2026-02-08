@@ -143,6 +143,32 @@ export const DATA = {
             video: "",
         },
         {
+            title: "Cloud-Native Application Monitoring Platform",
+            href: "https://github.com/Sahil-Prajapati-8917/Cloud-Native.git",
+            active: true,
+            description:
+                "Built a cloud-native monitoring system for real-time backend observability. Exposed custom application metrics, integrated Prometheus for metrics collection, and used Grafana for visualization. Monitored request traffic, latency, error rates, and service health in containerized environments.",
+            technologies: [
+                "Node.js",
+                "Express.js",
+                "Prometheus",
+                "Grafana",
+                "Docker",
+                "REST APIs",
+                "Linux",
+                "Git",
+            ],
+            links: [
+                {
+                    type: "Source",
+                    href: "https://github.com/Sahil-Prajapati-8917/Cloud-Native.git",
+                    icon: <Icons.github className="size-3" />,
+                },
+            ],
+            image: "",
+            video: "",
+        },
+        {
             title: "File Transfer & Folder Upload App",
             href: "#",
             active: true,
@@ -202,7 +228,7 @@ export const DATA = {
             href: "https://nsmadmin.nsmroadways.com/",
             active: true,
             description:
-                "Designed mobile and desktop screens for admin and driver workflows. Covered dashboards, driver lists, load management, chat, and job assignment. Focused on simple navigation and clear user experience for logistics operations.",
+                "Designed UI/UX for mobile and desktop admin and driver workflows, including dashboards, driver lists, load management, job assignment, and in-app chat. Emphasized clear navigation, role-based views, and responsive layouts to support fast, efficient logistics operations with an intuitive user experience.",
             technologies: [
                 "Figma",
             ],

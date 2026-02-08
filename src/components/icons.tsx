@@ -180,5 +180,33 @@ export const Icons = {
       {...props}
     />
   ),
+  figma: (props: any) => (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+      alt="Figma"
+      {...props}
+    />
+  ),
+  openai: (props: any) => (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
+      alt="OpenAI"
+      {...props}
+    />
+  ),
+  framer: (props: any) => (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg"
+      alt="Framer Motion"
+      {...props}
+    />
+  ),
+  gsap: (props: any) => (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gsap/gsap-plain.svg"
+      alt="GSAP"
+      {...props}
+    />
+  ),
   instagram: Instagram,
 };

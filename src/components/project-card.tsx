@@ -17,70 +17,33 @@ import { Icons } from "@/components/icons";
 const getTechnologyIcon = (tech: string) => {
   const techLower = tech.toLowerCase();
 
-  if (techLower.includes('react')) {
-    return <Icons.react className="w-2.5 h-2.5" />;
-  }
-  if (techLower.includes('node') || techLower.includes('express')) {
-    return <Icons.typescript className="w-2.5 h-2.5" />; // Using typescript icon as proxy for Node.js
-  }
-  if (techLower.includes('mongodb')) {
-    return <Icons.mongodb className="w-2.5 h-2.5" />;
-  }
-  if (techLower.includes('firebase')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-      className="w-2.5 h-2.5"
-      alt="Firebase"
-    />;
-  }
-  if (techLower.includes('javascript')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-      className="w-2.5 h-2.5"
-      alt="JavaScript"
-    />;
-  }
-  if (techLower.includes('figma')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-      className="w-2.5 h-2.5"
-      alt="Figma"
-    />;
-  }
-  if (techLower.includes('openai')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg"
-      className="w-2.5 h-2.5"
-      alt="OpenAI"
-    />;
-  }
-  if (techLower.includes('tailwind')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-      className="w-2.5 h-2.5"
-      alt="Tailwind CSS"
-    />;
-  }
-  if (techLower.includes('framer')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg"
-      className="w-2.5 h-2.5"
-      alt="Framer Motion"
-    />;
-  }
-  if (techLower.includes('gsap')) {
-    return <img
-      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gsap/gsap-plain.svg"
-      className="w-2.5 h-2.5"
-      alt="GSAP"
-    />;
-  }
-  if (techLower.includes('jszip')) {
-    return <Icons.git className="w-2.5 h-2.5" />; // Using git icon as proxy
-  }
+  if (techLower.includes("react")) return <Icons.react className="size-3" />;
+  if (techLower.includes("node")) return <Icons.nodejs className="size-3" />;
+  if (techLower.includes("express")) return <Icons.express className="size-3" />;
+  if (techLower.includes("mongodb")) return <Icons.mongodb className="size-3" />;
+  if (techLower.includes("firebase")) return <Icons.firebase className="size-3" />;
+  if (techLower.includes("aws")) return <Icons.aws className="size-3" />;
+  if (techLower.includes("docker")) return <Icons.docker className="size-3" />;
+  if (techLower.includes("prometheus")) return <Icons.prometheus className="size-3" />;
+  if (techLower.includes("grafana")) return <Icons.grafana className="size-3" />;
+  if (techLower.includes("linux")) return <Icons.linux className="size-3" />;
+  if (techLower.includes("git")) return <Icons.git className="size-3" />;
+  if (techLower.includes("ci/cd")) return <Icons.cicd className="size-3" />;
+  if (techLower.includes("nginx")) return <Icons.nginx className="size-3" />;
+  if (techLower.includes("tailwind")) return <Icons.tailwind className="size-3" />;
+  if (techLower.includes("python")) return <Icons.python className="size-3" />;
+  if (techLower.includes("bash")) return <Icons.bash className="size-3" />;
+  if (techLower.includes("typescript")) return <Icons.typescript className="size-3" />;
+  if (techLower.includes("javascript")) return <Icons.javascript className="size-3" />;
+  if (techLower.includes("figma")) return <Icons.figma className="size-3" />;
+  if (techLower.includes("openai")) return <Icons.openai className="size-3" />;
+  if (techLower.includes("framer")) return <Icons.framer className="size-3" />;
+  if (techLower.includes("gsap")) return <Icons.gsap className="size-3" />;
+  if (techLower.includes("jwt")) return <Icons.shield className="size-3" />;
+  if (techLower.includes("api")) return <Icons.globe className="size-3" />;
+  if (techLower.includes("jszip")) return <Icons.javascript className="size-3" />; // Fallback to JS icon
 
-  // Default fallback
-  return null;
+  return <Icons.globe className="size-3" />;
 };
 
 interface Props {
@@ -136,13 +99,13 @@ export function ProjectCard({
           <div className="relative h-40 w-full overflow-hidden">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm z-20">
-              <div className="grid h-full max-h-[300px] min-h-[160px] w-full max-w-xs animate-pulse place-items-center rounded-lg bg-gray-300">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-12 h-12 text-gray-500">
-    <path stroke-linecap="round" stroke-linejoin="round"
-      d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z">
-    </path>
-  </svg>
-</div>
+                <div className="grid h-full max-h-[300px] min-h-[160px] w-full max-w-xs animate-pulse place-items-center rounded-lg bg-gray-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="w-12 h-12 text-gray-500">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z">
+                    </path>
+                  </svg>
+                </div>
               </div>
             )}
             <video
