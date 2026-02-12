@@ -29,108 +29,22 @@ export function Hero() {
             <div className="flex">
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <span className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Hi, I'm Sahil 👋
+                  Hi, I'm Vansh 👋
                 </span>
               </BlurFade>
             </div>
             <div className="flex">
               <BlurFade delay={BLUR_FADE_DELAY * 3}>
                 <span className="inline-block max-w-[600px] md:text-xl">
-                  Cloud & DevOps Engineer
+                  Entrepreneur & IT Developer
                 </span>
               </BlurFade>
             </div>
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-base md:text-lg text-neutral-500 whitespace-pre-wrap">
             <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <span>I work with modern Cloud and DevOps tools like</span>
-            </BlurFade>
-
-            {/* AWS */}
-            <BlurFade delay={BLUR_FADE_DELAY * 5}>
-              <a
-                target="_blank"
-                href="https://aws.amazon.com/"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="h-4 w-4" />
-                <span className="font-bold">AWS</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 6}><span>, </span></BlurFade>
-
-            {/* Linux */}
-            <BlurFade delay={BLUR_FADE_DELAY * 7}>
-              <a
-                target="_blank"
-                href="https://www.linux.org/"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" className="h-4 w-4" />
-                <span className="font-bold">Linux</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 8}><span>, </span></BlurFade>
-
-            {/* Docker */}
-            <BlurFade delay={BLUR_FADE_DELAY * 9}>
-              <a
-                target="_blank"
-                href="https://www.docker.com/"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="h-4 w-4" />
-                <span className="font-bold">Docker</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 10}><span>, </span></BlurFade>
-
-            {/* Git */}
-            <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <a
-                target="_blank"
-                href="https://git-scm.com/"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="h-4 w-4" />
-                <span className="font-bold">Git</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 12}><span>, </span></BlurFade>
-
-            {/* CI/CD */}
-            <BlurFade delay={BLUR_FADE_DELAY * 13}>
-              <a
-                target="_blank"
-                href="https://docs.github.com/en/actions"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="CI/CD" className="h-4 w-4 dark:invert" />
-                <span className="font-bold">CI/CD Pipelines</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 14}><span>and </span></BlurFade>
-
-            {/* Nginx */}
-            <BlurFade delay={BLUR_FADE_DELAY * 15}>
-              <a
-                target="_blank"
-                href="https://www.nginx.com/"
-                className="inline-flex items-center gap-1.5 text-sm bg-black/5 dark:bg-white/15 border border-dashed dark:border-white/30 border-black/20 py-1 px-2 rounded-md skill-inner-shadow self-end text-black dark:text-white"
-              >
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg" alt="Nginx" className="h-4 w-4" />
-                <span className="font-bold">Nginx</span>
-              </a>
-            </BlurFade>
-
-            <BlurFade delay={BLUR_FADE_DELAY * 16}>
               <span>
-                {""} I focus on building secure, scalable, production-ready infrastructure.
+                I'm a problem solver and an aspiring Entrepreneur with a strong developer mindset. I specialize in building web based solutions and have a keen interest in modern technologies.
               </span>
             </BlurFade>
           </div>
@@ -139,7 +53,7 @@ export function Hero() {
         <div className="mt-8 flex gap-4">
           <BlurFade delay={BLUR_FADE_DELAY * 17}>
             <Button asChild>
-              <a href="/Sahil V. Muliya - Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Vansh - Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <svg
                   className="mr-2 h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"

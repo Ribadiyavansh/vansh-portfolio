@@ -2,15 +2,15 @@ import { Icons } from "@/components/icons";
 import { HomeIcon } from "lucide-react";
 
 export const DATA = {
-    name: "Sahil Muliya",
-    initials: "SM",
+    name: "Vansh",
+    initials: "V",
     url: "https://sahil-portfolio.vercel.app",
     location: "India",
     locationLink: "https://www.google.com/maps/place/india",
     description:
-        "Cloud & DevOps Engineer. I design, deploy, and manage secure, scalable cloud infrastructure.",
+        "Entrepreneur & IT Developer. I design, deploy, and manage secure, scalable cloud infrastructure.",
     summary:
-        "Cloud and DevOps enthusiast with hands-on experience in deploying, managing, and monitoring cloud-based infrastructure. Skilled in AWS core services, Linux administration, containerization, and CI/CD workflows. Comfortable working with cloud security, scalability, automation, and production-ready environments. Focused on building reliable systems rather than just applications.",
+        "I am an entrepreneur and IT developer focused on building scalable digital products and growth-driven brands. My work sits at the intersection of technology, business strategy, and execution.\n\nI am an entrepreneur with the capability to conceptualize, establish, and scale industrial ventures — including manufacturing plants, operational firms, and structured business ecosystems.",
     avatarUrl: "/my-avtar.png",
     skillCategories: {
         "Cloud & DevOps": [
@@ -43,24 +43,24 @@ export const DATA = {
         { href: "/", icon: HomeIcon, label: "Home" },
     ],
     contact: {
-        email: "sahilprajapati8917@gmail.com",
+        email: "vanshribadiya3@gmail.com",
         tel: "+91 7878224846",
         social: {
             GitHub: {
                 name: "GitHub",
-                url: "https://github.com/Sahil-Prajapati-8917",
+                url: "https://github.com/Ribadiyavansh",
                 icon: Icons.github,
                 navbar: true,
             },
             LinkedIn: {
                 name: "LinkedIn",
-                url: "https://www.linkedin.com/in/sahil-v-muliya-92593027b/",
+                url: "https://www.linkedin.com/in/vansh-ribadiyaa-5579482b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
                 icon: Icons.linkedin,
                 navbar: true,
             },
             Instagram: {
                 name: "Instagram",
-                url: "https://instagram.com/sahil_prajapati_8917",
+                url: "https://www.instagram.com/vanshribadiyaa_?igsh=amM3N2toOWp4YXQ3",
                 icon: Icons.instagram,
                 navbar: true,
             },
@@ -75,28 +75,16 @@ export const DATA = {
 
     work: [
         {
-            company: "Freelance Frontend Developer",
+            company: "Simform Software LLP",
             href: "#",
             badges: [],
-            location: "Remote",
+            location: "Ahmedabad",
             title: "Frontend Developer",
             logoUrl: "/omnetra-infotech.png",
-            start: "June 2025",
-            end: "Present",
+            start: "April 2025",
+            end: "Auguest 2025",
             description:
-                "Developing custom web applications for diverse clients using React.js and Tailwind CSS. Designing responsive UI/UX layouts to improve usability and accessibility. Optimizing existing websites for performance and mobile compatibility.",
-        },
-        {
-            company: "Omnetra Infotech",
-            href: "#",
-            badges: [],
-            location: "Remote",
-            title: "UI/UX & Graphic Design Intern",
-            logoUrl: "/omnetra-infotech.png",
-            start: "Apr 2025",
-            end: "May 2025",
-            description:
-                "Created wireframes, prototypes, and design systems using Figma. Designed marketing materials and client projects using Photoshop and Canva. Supported UI consistency and branding across multiple projects.",
+                "Simform is a digital engineering and software development company. It helps businesses build scalable digital products and provides agile teams to extend development capabilities.",
         },
     ],
     education: [

@@ -1,6 +1,6 @@
-# Sahil Portfolio
+# Vansh Portfolio
 
-A modern, responsive portfolio website built with React, Vite, and TypeScript. This project showcases my work as a Cloud & DevOps Engineer, featuring an interactive design with dark/light mode support and smooth animations.
+A modern, responsive portfolio website built with React, Vite, and TypeScript. This project showcases my work as a Entrepreneur & IT Developer, featuring an interactive design with dark/light mode support and smooth animations.
 
 ## 🚀 Tech Stack
 
@@ -164,12 +164,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-**Sahil V. Muliya**
-- Cloud & DevOps Engineer
+**Vansh**
+- Entrepreneur & IT Developer
 - Portfolio: [sahil-portfolio.vercel.app](https://sahil-portfolio.vercel.app)
-- LinkedIn: [linkedin.com/in/sahil-v-muliya-92593027b/](https://www.linkedin.com/in/sahil-v-muliya-92593027b/)
-- GitHub: [github.com/Sahil-Prajapati-8917](https://github.com/Sahil-Prajapati-8917)
-- Email: sahilprajapati8917@gmail.com
+- LinkedIn: [linkedin.com/in/vansh-ribadiyaa-5579482b5](https://www.linkedin.com/in/vansh-ribadiyaa-5579482b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- GitHub: [github.com/Ribadiyavansh](https://github.com/Ribadiyavansh)
+- Email: vanshribadiya3@gmail.com
 
 ---
 

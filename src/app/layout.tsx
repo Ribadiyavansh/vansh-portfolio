@@ -15,9 +15,9 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Helmet>
-        <title>{`${DATA.name} | Cloud & DevOps Engineer`}</title>
+        <title>{`${DATA.name} | Entrepreneur & IT Developer`}</title>
         <meta name="description" content={DATA.description} />
-        <meta name="keywords" content="Sahil Muliya, Cloud Engineer, DevOps Engineer, AWS, Linux, Docker, Portfolio, Cloud Infrastructure" />
+        <meta name="keywords" content="Vansh, Cloud Engineer, DevOps Engineer, AWS, Linux, Docker, Portfolio, Cloud Infrastructure" />
         <meta property="og:title" content={DATA.name} />
         <meta property="og:description" content={DATA.description} />
         <meta property="og:url" content={DATA.url} />
@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
         <meta property="og:image" content="/my-avtar.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={`${DATA.name} - Cloud & DevOps Engineer`} />
+        <meta property="og:image:alt" content={`${DATA.name} - Entrepreneur & IT Developer`} />
         <meta name="twitter:title" content={DATA.name} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/my-avtar.png" />
@@ -45,7 +45,7 @@ export default function Layout({ children }: LayoutProps) {
             "@context": "https://schema.org",
             "@type": "Person",
             name: DATA.name,
-            jobTitle: "Cloud & DevOps Engineer",
+            jobTitle: "Entrepreneur & IT Developer",
             description: DATA.description,
             url: DATA.url,
             image: `${DATA.url}/my-avtar.png`,
@@ -59,7 +59,7 @@ export default function Layout({ children }: LayoutProps) {
             },
             hasOccupation: {
               "@type": "Occupation",
-              name: "Cloud & DevOps Engineer",
+              name: "Entrepreneur & IT Developer",
               occupationalCategory: "Cloud Computing & DevOps",
               skills: Object.values(DATA.skillCategories).flat().join(", "),
             },
